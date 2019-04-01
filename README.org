@@ -1,0 +1,13 @@
+#+TITLE: HDF5Browse.jl
+#+AUTHOR: Stefanos Carlström
+#+EMAIL: stefanos.carlstrom@gmail.com
+
+Simple utility to print the structure of a HDF5 file.
+
+* Usage
+  Until it has been turned into a proper CLI, clone this repository
+  into =~/.julia/dev= and put the following in your shell config:
+
+  #+BEGIN_SRC sh
+    alias hdf5browse="julia -e 'using Pkg; pkg\"activate ~/.julia/dev/HDF5Browse\"; using HDF5Browse; HDF5Browse.cli()'"
+  #+END_SRC
