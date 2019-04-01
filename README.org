@@ -9,5 +9,5 @@ Simple utility to print the structure of a HDF5 file.
   into =~/.julia/dev= and put the following in your shell config:
 
   #+BEGIN_SRC sh
-    alias hdf5browse="julia -e 'using Pkg; pkg\"activate ~/.julia/dev/HDF5Browse\"; using HDF5Browse; HDF5Browse.cli()'"
+    alias hdf5browse="julia --color=yes -e 'using Pkg; pkg\"activate ~/.julia/dev/HDF5Browse\"; using HDF5Browse; HDF5Browse.cli()'"
   #+END_SRC
