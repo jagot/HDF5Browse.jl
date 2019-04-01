@@ -34,8 +34,8 @@ end
 function hdf5browse(x::Union{HDF5File, HDF5Group}, io::IO=stdout)
     println(io, x)
     hdf5printattrs(x, io)
-    print_block(io) do io
-        for n in names(x)
+    for n in names(x)
+        print_block(io) do io
             hdf5browse(x[n], io)
         end
     end
@@ -46,6 +46,8 @@ function hdf5browse(x::HDF5Dataset, io::IO=stdout)
     hdf5printattrs(x, io)
     data = read(x)
     println(io, eltype(data), " ", size(data))
+    show(IOContext(io, :limit=>true), data)
+    println(io)
 end
 
 hdf5browse(filename::AbstractString) = h5open(hdf5browse, filename, "r")
